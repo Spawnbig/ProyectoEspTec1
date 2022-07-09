@@ -1,10 +1,9 @@
 <template>
-
-  <div id="Cuerpo" class="column is-offset-one-quarter">
+<div id="Cuerpo">
 <div class="field">
   <label class="label is-large">Registrar Usuario</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-large" type="email" placeholder="Nombre">
+    <input class="input is-large" type="name" placeholder="Nombre">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope fa-xs"></i>
     </span>
@@ -16,7 +15,7 @@
 
 <div class="field">
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-large" type="email" placeholder="Apellido">
+    <input class="input is-large" type="email" placeholder="Apellidos">
     <span class="icon is-left">
       <i class="fas fa-envelope fa-sm"></i>
     </span>
@@ -49,11 +48,7 @@
     </span>
   </div>
 </div>
-<button class="button is-primary">Registrar Usuario</button>
-<br>
- <button class="button is-danger">Cancelar</button>
 </div>
-
 
 </template>
 
@@ -63,20 +58,20 @@ export default {
 
 }
 
+
+
+
+
+
 </script>
 
 <style scoped>
 #Cuerpo{
   margin-top: 10%;
-  margin-right: 30%;
    display: grid;
   place-content: center;
-  border-style: solid;
-  border-color:black;
-  background-color:#f0f0f5 ;
 
 
 }
-
 </style>
 

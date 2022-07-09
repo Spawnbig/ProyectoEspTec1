@@ -1,6 +1,5 @@
 <template>
-
-  <div id="Cuerpo" class="column is-offset-one-quarter">
+<div id="Cuerpo" class="column is-offset-one-quarter">
 <div class="field">
   <label class="label is-large">Registrar Usuario</label>
   <div class="control has-icons-left has-icons-right">
@@ -54,7 +53,6 @@
  <button class="button is-danger">Cancelar</button>
 </div>
 
-
 </template>
 
 <script>
@@ -72,11 +70,10 @@ export default {
    display: grid;
   place-content: center;
   border-style: solid;
-  border-color:black;
+  border-color:#5acd95;
   background-color:#f0f0f5 ;
 
 
 }
-
 </style>
 

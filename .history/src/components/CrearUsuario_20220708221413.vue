@@ -1,5 +1,5 @@
 <template>
-
+<div id="Pagina">
   <div id="Cuerpo" class="column is-offset-one-quarter">
 <div class="field">
   <label class="label is-large">Registrar Usuario</label>
@@ -53,7 +53,7 @@
 <br>
  <button class="button is-danger">Cancelar</button>
 </div>
-
+</div>
 
 </template>
 
@@ -77,6 +77,8 @@ export default {
 
 
 }
-
+.Pagina{
+  background-color:#006600 ;
+}
 </style>
 

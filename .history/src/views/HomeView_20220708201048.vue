@@ -1,12 +1,14 @@
 <template>
+  <h1> HOME </h1>
   <CrearUsuario/>
+  <button class="button is-primary">Button</button>
 </template>
 
 <script >
 import CrearUsuario from "../components/CrearUsuario.vue";
 
 export default {
-components:{CrearUsuario}
+component:{CrearUsuario};
 }
 
 </script>
