@@ -1,51 +1,43 @@
 <template>
-<v-app>
-     <v-main>  
+     <main>  
       <br>
       <br>
       <div>
-
-        <div id ="login" class="column is-half is-offset-one-quarter">
+        <div id ="container-max" class="container box">
           <label class="label">Iniciar Sesion </label>
-
-          <form >
+          <form>
             <div class="form-group">
               <label class="label" for="correo">Ingrese su nombre : </label>
               <input 
                 id="nombre"  name="nombre" type="nombre" class="input"
-                 required autofocus="autofocus" placeholder="Ingrese su nombre" v-model="nombre"/>
+                 required autofocus="autofocus" placeholder="Ingrese su nombre" v-model="credenciales.nombre"/>
             </div>
 
             <div class="form-group">
               <label class="label" for="clave">Ingrese su clave : </label>
               <input
                 id="clave" type="password"  name="clave" class="input" 
-                required autofocus="autofocus" placeholder="Digite su clave" v-model="clave"/>
+                required autofocus="autofocus" placeholder="Digite su clave" v-model="credenciales.clave"/>
             </div>
-              
+
           </form>
-
-        </div>
-
-
-    <div id="boton">
+              <div id="boton">
         <p>
-          <button class="button is-primary" type="submit" name="login-submit" id="login-submit"
+          <button class="button" type="submit" name="login-submit" id="login-submit"
                   value="Ingresar" @click="ingresar(nombre,clave)">
                   Ingresar
           </button>
+          <button class="button ml-3" type="submit" name="login-submit" id="login-submit"
+                  value="Ingresar" @click="$emit('cambiarVista')">
+                  Crear Cuenta
+          </button>
          </p>
       </div>
+        </div>
 
       </div>
-      
-      
-
-        
-    </v-main>
-    </v-app>
-      
-  
+    </main>
+    
 </template>
 
 <script>
@@ -80,16 +72,12 @@ methods: {
 padding-top: 15px;
    padding-bottom: 10px
 }
-#login{
-  display:table;
-  text-align:center;
-margin-top: 40px;
- padding-top: 50px;
-  padding-bottom: 50px;
-   background-color: #5acd95;
-   border: #000000;
-   border-style: solid;
+
+#container-max{
+  max-width: 500px;
 }
+
+
 
 #boton{
   
@@ -99,6 +87,10 @@ margin-top: 40px;
   
 }
 
+#boton button{
+  background-color: #0274de;
+  color: white;
+}
 
 
 
