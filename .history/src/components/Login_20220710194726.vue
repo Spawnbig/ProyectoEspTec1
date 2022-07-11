@@ -10,14 +10,14 @@
               <label class="label" for="correo">Ingrese su nombre : </label>
               <input 
                 id="nombre"  name="nombre" type="nombre" class="input"
-                 required autofocus="autofocus" placeholder="Ingrese su nombre" v-model="correo"/>
+                 required autofocus="autofocus" placeholder="Ingrese su nombre" v-model="credenciales.correo"/>
             </div>
 
             <div class="form-group">
               <label class="label" for="clave">Ingrese su clave : </label>
               <input
                 id="clave" type="password"  name="clave" class="input" 
-                required autofocus="autofocus" placeholder="Digite su clave" v-model="clave"/>
+                required autofocus="autofocus" placeholder="Digite su clave" v-model="credenciales.clave"/>
             </div>
 
           </form>
@@ -41,32 +41,25 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
 
 data(){
 return{
-   correo:"",
-   clave:"",
-    };
+
+  credenciales: {
+        correo: "",
+        clave: "",
+      },
+
+    }
 },
 
 
 methods: {
 
     login(){
-      let json = {
-      "correo":this.correo,
-      "clave":this.clave,
-      };
-      axios.post('', json)
-      .then(data => {
-        this.$store.dispatch("login",data.data.nombre);
-        console.log(data);
-        localStorage.token = data.data.token;
-        
-      });
-    },
+
+    }
 
   }
 }

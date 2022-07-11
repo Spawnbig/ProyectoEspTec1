@@ -10,21 +10,21 @@
               <label class="label" for="correo">Ingrese su nombre : </label>
               <input 
                 id="nombre"  name="nombre" type="nombre" class="input"
-                 required autofocus="autofocus" placeholder="Ingrese su nombre" v-model="correo"/>
+                 required autofocus="autofocus" placeholder="Ingrese su nombre" v-model="credenciales.nombre"/>
             </div>
 
             <div class="form-group">
               <label class="label" for="clave">Ingrese su clave : </label>
               <input
                 id="clave" type="password"  name="clave" class="input" 
-                required autofocus="autofocus" placeholder="Digite su clave" v-model="clave"/>
+                required autofocus="autofocus" placeholder="Digite su clave" v-model="credenciales.clave"/>
             </div>
 
           </form>
               <div id="boton">
         <p>
           <button class="button" type="submit" name="login-submit" id="login-submit"
-                  value="Ingresar" @click="login(nombre,clave)">
+                  value="Ingresar" @click="ingresar(nombre,clave)">
                   Ingresar
           </button>
           <button class="button ml-3" type="submit" name="login-submit" id="login-submit"
@@ -41,32 +41,25 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
-
+name: 'login',
 data(){
 return{
-   correo:"",
-   clave:"",
-    };
+
+  credenciales: {
+        nombre: "",
+        clave: "",
+      },
+
+    }
 },
 
 
 methods: {
 
-    login(){
-      let json = {
-      "correo":this.correo,
-      "clave":this.clave,
-      };
-      axios.post('', json)
-      .then(data => {
-        this.$store.dispatch("login",data.data.nombre);
-        console.log(data);
-        localStorage.token = data.data.token;
-        
-      });
-    },
+    ingresar(){
+
+    }
 
   }
 }

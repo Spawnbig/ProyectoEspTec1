@@ -3,7 +3,7 @@
     <div class="field">
       <label class="label is-large">Registrar Usuario</label>
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Nombre" v-model="nombre">
+        <input class="input is-large" type="email" placeholder="Nombre">
         <span class="icon is-small is-left">
           <i class="fas fa-envelope fa-xs"></i>
         </span>
@@ -14,7 +14,7 @@
    </div>
     <div class="field">
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Apellido" v-model="apellido">
+        <input class="input is-large" type="email" placeholder="Apellido">
         <span class="icon is-left">
           <i class="fas fa-envelope fa-sm"></i>
         </span>
@@ -26,7 +26,7 @@
 
     <div class="field">
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Correo" v-model="correo">
+        <input class="input is-large" type="email" placeholder="Correo">
         <span class="icon is-large is-left">
           <i class="fas fa-envelope"></i>
         </span>
@@ -38,7 +38,7 @@
 
       <div class="field">
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Nombre Usuario" v-model="nombreUsuario">
+        <input class="input is-large" type="email" placeholder="Nombre Usuario">
         <span class="icon is-large is-left">
           <i class="fas fa-envelope"></i>
         </span>
@@ -50,7 +50,7 @@
 
     <div class="field">
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Contraseña" v-model="clave">
+        <input class="input is-large" type="email" placeholder="Contraseña">
         <span class="icon is-medium is-left">
           <i class="fas fa-envelope fa-lg"></i>
         </span>
@@ -59,48 +59,16 @@
         </span>
       </div>
     </div>
-    <button class="button is-primary mt-2" @click="registrarUsuario(nombre,apellido,correo,nombreUsuario,clave)">
-    Registrar Usuario
-    </button>
+    <button class="button is-primary mt-2">Registrar Usuario</button>
     <br>
     <button class="button is-danger mt-2 mb-2" v-on:click="$emit('cambiarVista')">Cancelar</button>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
-data(){
-  return {
-    nombre:"",
-    apellido:"",
-    correo:"",
-    nombreUsuario:"",
-    clave:"",
-  }
 
-},
-
-methods: {
- async registrarUsuario(nombre,apellido,correo,nombreUsuario,clave){
-  await axios
-  .post("http://localhost:3000/api/auth/register",{
-
-  nombre:nombre,
-  apellido:apellido,
-  correo:correo,
-  nombreUsuario:nombreUsuario,
-  clave:clave,
-  })
-  .then((resp) => {
-        console.log(resp.data);
-        location.reload();
-  });
-
-  }
-  
-},
 }
 
 </script>

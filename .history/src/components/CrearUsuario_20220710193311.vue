@@ -59,9 +59,7 @@
         </span>
       </div>
     </div>
-    <button class="button is-primary mt-2" @click="registrarUsuario(nombre,apellido,correo,nombreUsuario,clave)">
-    Registrar Usuario
-    </button>
+    <button class="button is-primary mt-2" @click="$emit('cambiarVista')">Registrar Usuario</button>
     <br>
     <button class="button is-danger mt-2 mb-2" v-on:click="$emit('cambiarVista')">Cancelar</button>
   </div>
@@ -85,7 +83,7 @@ data(){
 methods: {
  async registrarUsuario(nombre,apellido,correo,nombreUsuario,clave){
   await axios
-  .post("http://localhost:3000/api/auth/register",{
+  .post("",{
 
   nombre:nombre,
   apellido:apellido,
@@ -93,10 +91,7 @@ methods: {
   nombreUsuario:nombreUsuario,
   clave:clave,
   })
-  .then((resp) => {
-        console.log(resp.data);
-        location.reload();
-  });
+
 
   }
   

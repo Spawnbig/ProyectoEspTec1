@@ -55,18 +55,9 @@ return{
 methods: {
 
     login(){
-      let json = {
       "correo":this.correo,
-      "clave":this.clave,
-      };
-      axios.post('', json)
-      .then(data => {
-        this.$store.dispatch("login",data.data.nombre);
-        console.log(data);
-        localStorage.token = data.data.token;
-        
-      });
-    },
+      "clave":this.clave
+    };
 
   }
 }

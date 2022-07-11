@@ -59,9 +59,7 @@
         </span>
       </div>
     </div>
-    <button class="button is-primary mt-2" @click="registrarUsuario(nombre,apellido,correo,nombreUsuario,clave)">
-    Registrar Usuario
-    </button>
+    <button class="button is-primary mt-2" @click="$emit('cambiarVista')">Registrar Usuario</button>
     <br>
     <button class="button is-danger mt-2 mb-2" v-on:click="$emit('cambiarVista')">Cancelar</button>
   </div>
