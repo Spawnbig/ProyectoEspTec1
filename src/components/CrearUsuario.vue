@@ -86,15 +86,16 @@ methods: {
  async registrarUsuario(nombre,apellido,correo,nombreUsuario,clave){
   await axios
   .post("http://localhost:3000/api/auth/register",{
-
-  nombre:nombre,
-  apellido:apellido,
-  correo:correo,
-  nombreUsuario:nombreUsuario,
-  clave:clave,
+  firstName:nombre,
+  lastName:apellido,
+  username:nombreUsuario,
+  role: 'User', 
+  email:correo,
+  password:clave,
   })
   .then((resp) => {
         console.log(resp.data);
+        this.$emit('cambiarVista')
         location.reload();
   });
 

@@ -1,12 +1,14 @@
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore({
+export const storeUser = defineStore({
   id: 'counter',
   state: () => ({
-    counter: 0
+    user: JSON.parse(localStorage.getItem('user'))
   }),
   getters: {
-    doubleCount: (state) => state.counter * 2
+    userName(state) {
+      return state.user.username
+    },
   },
   actions: {
     increment() {

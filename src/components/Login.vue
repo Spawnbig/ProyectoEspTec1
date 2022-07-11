@@ -7,7 +7,7 @@
           <label class="label">Iniciar Sesion </label>
           <form>
             <div class="form-group">
-              <label class="label" for="correo">Ingrese su nombre : </label>
+              <label class="label" for="correo">Ingrese su correo : </label>
               <input 
                 id="nombre"  name="nombre" type="nombre" class="input"
                  required autofocus="autofocus" placeholder="Ingrese su nombre" v-model="correo"/>
@@ -42,8 +42,8 @@
 
 <script>
 import axios from 'axios';
-export default {
 
+export default {
 data(){
 return{
    correo:"",
@@ -56,15 +56,18 @@ methods: {
 
     login(){
       let json = {
-      "correo":this.correo,
-      "clave":this.clave,
+      "email":this.correo,
+      "password":this.clave,
       };
-      axios.post('', json)
+      axios.post('http://localhost:3000/api/auth/login', json)
       .then(data => {
-        this.$store.dispatch("login",data.data.nombre);
-        console.log(data);
-        localStorage.token = data.data.token;
-        
+        localStorage.setItem('user',JSON.stringify(data.data.user))
+        localStorage.setItem('token',data.data.token)
+        console.log(JSON.parse(localStorage.getItem('user')))
+        this.$router.push( "/dashboard" )
+      }).catch(error => {
+        console.log('No se ha podido logear error' + error);
+        localStorage.clear()
       });
     },
 
