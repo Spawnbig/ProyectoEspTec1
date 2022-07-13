@@ -1,5 +1,5 @@
 <template>
-<nav id="nav-color" class="navbar is-info" role="navigation" aria-label="main navigation">
+<nav id="nav-color" class="navbar is-info level" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item">
       <svg width="71" height="24" viewBox="0 0 71 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,13 +8,33 @@
       </svg>
     </a>
   </div>
+  <button class="button is-danger mr-2 my-auto level-right">Desconectar</button>
 </nav>
 </template>
-
+     
 <script>
 export default {
 
+data(){
+
+},
+
+
+methods: {
+
+
+  desconectar(){}
+  
+},
+
+
+
 }
+
+
+
+
+
 </script>
 
 <style scoped>
