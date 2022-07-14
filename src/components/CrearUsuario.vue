@@ -3,7 +3,7 @@
     <div class="field">
       <label class="label is-large">Registrar Usuario</label>
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Nombre" v-model="nombre">
+        <input class="input is-large" type="text" placeholder="Nombre" v-model="nombre">
         <span class="icon is-small is-left">
           <i class="fas fa-envelope fa-xs"></i>
         </span>
@@ -14,7 +14,7 @@
    </div>
     <div class="field">
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Apellido" v-model="apellido">
+        <input class="input is-large" type="text" placeholder="Apellido" v-model="apellido">
         <span class="icon is-left">
           <i class="fas fa-envelope fa-sm"></i>
         </span>
@@ -38,7 +38,7 @@
 
       <div class="field">
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Nombre Usuario" v-model="nombreUsuario">
+        <input class="input is-large" type="text" placeholder="Nombre Usuario" v-model="nombreUsuario">
         <span class="icon is-large is-left">
           <i class="fas fa-envelope"></i>
         </span>
@@ -50,7 +50,7 @@
 
     <div class="field">
       <div class="control has-icons-left has-icons-right">
-        <input class="input is-large" type="email" placeholder="Contraseña" v-model="clave">
+        <input class="input is-large" type="password" placeholder="Contraseña" v-model="clave">
         <span class="icon is-medium is-left">
           <i class="fas fa-envelope fa-lg"></i>
         </span>

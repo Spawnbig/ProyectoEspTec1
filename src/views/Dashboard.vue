@@ -1,21 +1,24 @@
 <template>
+  <NavbarVue :login="login"></NavbarVue>
   <DatosUsuario v-if="!vistaGrafico" :username="dataUser.username" :sessions="dataUser.sessions" @cambiarVista="cambiarVista"/>
   <Grafico v-if="vistaGrafico" :dataUser="dataUser" @cambiarVista="cambiarVista"/>
 </template>
 
 <script>
+import NavbarVue from '../components/Navbar.vue'
 import DatosUsuario from '../components/DatosUsuario.vue'
 import Grafico from '../components/Grafico.vue'
 //import axios from 'axios'
 import usuariosDB from '../Json/usuarios.json'
 
 export default {
-  components:{DatosUsuario,Grafico},
+  components:{DatosUsuario,Grafico,NavbarVue},
   data(){
     return{
       dataUser: '',
       vistaGrafico: false,
-      username:''
+      username:'',
+      login: true
     }
   },
   created(){

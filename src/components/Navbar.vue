@@ -8,33 +8,22 @@
       </svg>
     </a>
   </div>
-  <button class="button is-danger mr-2 my-auto level-right">Desconectar</button>
+  <button v-if="login" class="button is-danger mr-2 my-auto level-right" v-on:click="desconectar()">Desconectar</button>
 </nav>
 </template>
      
 <script>
+import router from '../router'
+
 export default {
-
-data(){
-
-},
-
-
-methods: {
-
-
-  desconectar(){}
-  
-},
-
-
-
+  props:['login'],
+  methods:{
+    desconectar(){
+      localStorage.clear()
+      router.push('home')
+    }
+  }
 }
-
-
-
-
-
 </script>
 
 <style scoped>
